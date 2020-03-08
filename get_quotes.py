@@ -8,7 +8,7 @@ args = parser.parse_args()
 
 def download_quotes(person, file):
     with open(file, 'w') as f:
-        quotes = wikiquote.quotes(person)
+        quotes = wikiquote.quotes(person, max_quotes=200)
         for quote in quotes:
             f.write(quote + '\n')
 
