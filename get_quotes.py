@@ -4,10 +4,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("person")
-
 args = parser.parse_args()
-
-
 
 def download_quotes(person, file):
     with open(file, 'w') as f:
