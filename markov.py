@@ -1,19 +1,19 @@
 import argparse
 import markovify
-import sys
+import language_check
 
-parser = argparse.ArgumentParser()
-parser.add_argument("persons", nargs='+')
+from helpers import *
 
-args = parser.parse_args()
+tool = language_check.LanguageTool('en-US')
 
+def generate_tweet(persons, chain_state_size=2):
+    texts = [open(DATADIR + file_name(person) + DATASUFFIX, 'r').read()
+             for person in persons]
+    chains = [markovify.Text(text) for text in texts]
+    final_chain = markovify.combine(chains)
 
-texts = [ open("./data/{}_quotes.txt".format(
-    "_".join(name for name in person.split())), 'r').read() for person in args.persons]
-
-
-chains = [markovify.Text(text) for text in texts]
-
-final_chain = markovify.combine(chains)
-
-print(final_chain.make_short_sentence(280, max_overlap_ratio=0.5))
+    tweet = final_chain.make_short_sentence(
+        280, state_size=chain_state_size, max_overlap_ratio=0.5)
+    matches = tool.check(tweet)
+    tweet = language_check.correct(tweet, matches)
+    return tweet

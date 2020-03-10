@@ -1,6 +1,7 @@
 import wikiquote
 import sys
 import argparse
+from helpers import *
 
 parser = argparse.ArgumentParser()
 parser.add_argument("person")
@@ -23,7 +24,7 @@ def download_quotes(person, file):
 if __name__ == '__main__':
     try:
         person = args.person
-        file_name = "./data/{}_quotes.txt".format("_".join(name for name in person.split()))
+        file_name = DATADIR + person + DATASUFFIX
         download_quotes(person, file_name)
     except Exception as e:
         print(e)
