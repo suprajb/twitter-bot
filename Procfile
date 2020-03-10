@@ -1,1 +1,1 @@
-worker: python tweet.py && sleep 360
+worker: python tweet.py && sleep 300
