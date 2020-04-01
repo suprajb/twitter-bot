@@ -1,6 +1,6 @@
-# Hippie Stalin
+# Twitter Bot
 
-This is the code for a [twitter bot](https://twitter.com/the_hippie_tsar) that I made for fun. It aims to generate tweets mimicing the speech style of Joseph Stalin, John Lennon and Steve Jobs, using Markov chains (created using the excellent `markovify` module).
+This is the code for a [twitter bot](https://twitter.com/the_hippie_tsar) that I made for fun. It aims to generate tweets mimicing the speech style of any person, using Markov chains (created using the excellent `markovify` module) for generative text.
 
 ## Run on your machine
 
