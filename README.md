@@ -26,7 +26,6 @@ python tweet.py
 ```
 
 
-Note: The [language-check](https://pypi.org/project/language-check/) module requires a JVM to run.
 
 ## Mimic other people's rhetoric
 
