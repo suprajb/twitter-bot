@@ -6,7 +6,7 @@ This is the code for a [twitter bot](https://twitter.com/the_hippie_tsar) that I
 
 Clone this repository using 
 ```bash
-git clone https://github.com/youwishyouhadthishandle/twitter-bot.git
+git clone https://github.com/suprajb/twitter-bot.git
 ```
 Install the requirements using 
 ```bash
